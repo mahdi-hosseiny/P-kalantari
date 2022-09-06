@@ -1,0 +1,307 @@
+@font-face {
+    font-family: behdad ;
+    src: url(../font/Mj_Tunisia\ Lt.ttf) ;
+    src: url(../font/mj.ttf) ;
+    font-weight: bold;
+}
+@font-face {
+    font-family: ghalam ;
+    src: url(../font/Mj_Tunisia\ Lt.ttf) ;
+    src: url(../font/Behdad-Regular.woff) ;
+    font-weight: bold;
+}
+$background-color:#fff;
+$font-color:#212529;
+$main-color:#6B5041;
+html::-webkit-scrollbar{
+        width: 50px;
+    }
+
+body{
+    background-color: $background-color;
+    color: $font-color;
+    direction: rtl;
+    
+}
+@mixin center {
+    display: flex;
+    justify-content: center;
+    
+    // <general styles
+    
+.mainpage{
+    @include center();
+}
+    font-family: "ghalam" ;
+    margin: auto;
+    max-width: 1140px;
+}
+.details{
+    @include center();
+    justify-content: space-between;
+        margin-top: 5%;
+        border-bottom: 1px solid $main-color;
+        padding-bottom: 5%;
+        img{
+            object-fit: cover;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 140px;
+        }
+        .progrof{
+            
+            text-align: right;
+            font-size: 1rem;
+            padding: 1.5svw;
+            color: $main-color;
+            a{
+                color: $main-color;
+            }
+        }
+        
+    }
+.header-image{  
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+    padding: 0 20%;
+    img{
+        width: 100%;
+        max-width: 490px;
+    }
+}
+.nav-bar{
+    @include center();
+    border-top: 1px solid $main-color;
+    border-bottom: 1px solid $main-color;
+    
+    .respansiv-navbar{
+        display: none;
+    }
+    ul{
+        margin-bottom: 1px;
+        display: flex;
+        list-style-type: none;
+    }
+    ul{
+        display: flex;
+        justify-content: space-between;
+        width: 700px;
+    } 
+    a{
+        font-family: "behdad" ;
+        text-decoration:none;
+        color: $main-color;
+        font-size: 22px;
+        
+    }
+    
+    .navbar-toggler{
+        outline: none;
+        border: none;
+        height: 2vh;
+        display: block;
+        
+    }
+    .hidenav{
+        display: none;
+    }
+    .offcanvas{
+        max-width: 45%;
+    }
+    .btn-close{
+        position: absolute;
+        top: 19%;
+        left: -15%;
+        
+    }
+    
+    @media (max-width: 600px) {
+        
+        .respansiv-navbar{
+            display: block;
+        }
+        .ul{
+            display: none;
+        }
+        .btn-close{
+            position: absolute;
+            top:18%;
+            left: -17%;
+            
+        }
+    }
+    
+    
+}
+.head-post{
+    font-family: "behdad" !important;
+    text-align: center;
+    font-size: 60px;
+    font-family: Mj_Ghalam;
+    color: $main-color;
+    margin: 3.2%;
+}
+.text{
+    border: 2px $main-color solid;
+    @include center();
+    padding: 1% 3%;
+    border-radius: 20px;
+    font-family: ghalam;
+    color: $main-color;
+    font-weight: 900;
+    max-width: 1140px;
+    margin: auto;
+    margin-top: 20px;
+    @media(max-width:600px){
+            display: flex;
+            flex-direction: column;
+            height: 120vh;
+        }
+        .pic{   
+        @include center();
+        width: 130px;
+        height: 130px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        filter: saturate(1);
+        @media(max-width:600px){
+            height: 50%;
+            width: 100%;
+        }
+        img{  
+            border-radius: 10px;
+            width: 100%;
+            object-fit: cover;
+            @media(max-width:600px){
+                
+                border-radius: 10px;
+                    width: 100%;
+                    object-fit: cover;
+            
+                }
+                
+            }
+    }
+    .detail{
+        padding: 2%;
+        color: $main-color;
+        font-weight: 500; 
+    }
+    .date{
+        font-family: behdad;
+        
+    }
+    .icon {
+        @include center();
+        align-items: center;
+        font-size: 50px;
+    }
+    a{
+        color: $main-color;
+        text-decoration:none;
+    }
+}
+.posts{
+    @include center();
+    margin-bottom: 2%;
+    border-bottom: 2px solid $main-color;
+    padding-bottom: 2%; 
+    a{
+        
+        color: $main-color;
+        text-decoration:none;
+        font-family: behdad;
+        font-size: 50px;
+    }
+}
+.poem{
+    color: $main-color;
+    @include center();
+    font-family: behdad;
+    font-size: 30px;
+}
+.paints{
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 0%;
+}
+.paint{
+    margin: 0px;
+    padding: 0%;
+    img{
+        width: 24.57vw;
+    height: 50vh;
+    object-fit: cover;
+    filter: contrast(0.5);
+    &:hover{
+        filter: contrast(1);
+        transition: 0.5s;
+    }
+    @media(max-width:600px){
+        height: 20vh;
+    }
+}
+}
+footer{
+    position: relative;
+    bottom: 0%;
+    background-color: #6B5041;
+    color: #fff;
+    margin-top: 5rem;
+    height: 50vh;
+    .header-footer{
+        text-align: center;
+        padding: 3rem;
+    }
+    a{
+        
+        color: $background-color;
+        text-decoration:none;
+        font-family: ghalam;
+        font-size: 20px;
+    }
+    .secend-details{
+        border-bottom: 2px white solid ;
+        display: flex;
+        justify-content: space-around;
+    }
+    .first-details{
+        border-top: 2px white solid ;
+        display: flex;
+        justify-content: space-around;
+    }
+    p{
+        text-align: center;
+        margin-top: 25px;
+        font-size: 20px;
+    }
+}
+
+// general styles>
+
+// <Media Queries
+@media (max-width: 1024px) { // more than 1024px
+    
+    
+    
+}
+@media (max-width: 600px) {
+    
+    .details{
+        flex-direction: column;
+        margin-top :10px ;
+    }
+        .respansiv-navbar{
+            display: block;
+        }
+        .ul{
+            display: none;
+        }
+    }
+    
+    
+    
+    // Media Queries>
