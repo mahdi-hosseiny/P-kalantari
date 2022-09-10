@@ -13,10 +13,20 @@
 $background-color:#fff;
 $font-color:#212529;
 $main-color:#6B5041;
-html::-webkit-scrollbar{
-        width: 50px;
-    }
-
+@mixin span {
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    box-shadow: 5px 5px 0px white;
+    bottom: -9px;
+    background-color: #fff;
+    width: 200px;
+    margin: auto;
+    font-size: 30px;
+    font-family: ghalam;
+    color: $main-color;
+}
 body{
     background-color: $background-color;
     color: $font-color;
@@ -29,9 +39,6 @@ body{
     
     // <general styles
     
-.mainpage{
-    @include center();
-}
     font-family: "ghalam" ;
     margin: auto;
     max-width: 1140px;
@@ -39,9 +46,16 @@ body{
 .details{
     @include center();
     justify-content: space-between;
-        margin-top: 5%;
-        border-bottom: 1px solid $main-color;
-        padding-bottom: 5%;
+    margin-top: 5%;
+    border-bottom: 1px solid $main-color;
+     padding-bottom: 5%;
+        @media(max-width:600px){
+            display: flex;
+            flex-direction: column;
+            img{
+                margin: auto;
+            }
+        }
         img{
             object-fit: cover;
             border-radius: 5px;
@@ -60,17 +74,17 @@ body{
         }
         
     }
-.header-image{  
-    margin-top: 3%;
-    margin-bottom: 3%;
-    text-align: center;
-    padding: 0 20%;
-    img{
-        width: 100%;
-        max-width: 490px;
+    .header-image{  
+        margin-top: 3%;
+        margin-bottom: 3%;
+        text-align: center;
+        padding: 0 20%;
+        img{
+            width: 100%;
+            max-width: 490px;
+        }
     }
-}
-.nav-bar{
+    .nav-bar{
     @include center();
     border-top: 1px solid $main-color;
     border-bottom: 1px solid $main-color;
@@ -118,6 +132,9 @@ body{
     
     @media (max-width: 600px) {
         
+        .mainpage{
+            @include center();
+        }
         .respansiv-navbar{
             display: block;
         }
@@ -187,6 +204,7 @@ body{
         padding: 2%;
         color: $main-color;
         font-weight: 500; 
+        
     }
     .date{
         font-family: behdad;
@@ -272,6 +290,7 @@ footer{
         border-top: 2px white solid ;
         display: flex;
         justify-content: space-around;
+        padding: 20px;
     }
     p{
         text-align: center;
@@ -282,26 +301,142 @@ footer{
 
 // general styles>
 
-// <Media Queries
-@media (max-width: 1024px) { // more than 1024px
-    
-    
+
+
+//<sing-in form
+.sing-in{
+max-width: 700px;
+margin: auto ;
+margin-top: 5%;
+color: #fff;
+font-family: behdad;
+font-size: 20px;
+.tab-content{
+    background-color: $main-color;
+    border-radius: 20px;
+    padding: 10%;
+}
+input{
+    background-color:  #6d584d;
+}
+a{
+    color: #fff;
+}
+.diactive{
+    color: $main-color;
+}
+.title{
+    text-align: center;
+    font-family: behdad;
+    font-size: 60px;
+    color: $background-color;
+}
+button{
+    background-color: #bfada4;
+    color: #6B5041;
+    font-size: 40px;
     
 }
-@media (max-width: 600px) {
+}
+
+
+//<sing-in form>
+
+//<register form
+.register{
+max-width: 700px;
+margin: auto ;
+margin-top: 5%;
+color: #fff;
+font-family: behdad;
+font-size: 20px;
+.tab-content{
+    background-color: $main-color;
+    border-radius: 20px;
+    padding: 10%;
+}
+input{
+    background-color:  #6d584d;
+}
+a{
+    color: #fff;
+}
+.diactive{
+    color: $main-color;
+}
+.title{
+    text-align: center;
+    font-family: behdad;
+    font-size: 60px;
+    color: white;
+}
+button{
+    background-color: #bfada4;
+    color: #6B5041;
+    font-size: 40px;
     
-    .details{
-        flex-direction: column;
-        margin-top :10px ;
-    }
-        .respansiv-navbar{
-            display: block;
+}
+}
+
+
+//<regiter form>
+//<galery page1
+.gallery{
+    .header-gallery{
+        border-bottom: 1px solid #6B5041;
+        max-width: 1140px;
+        margin: auto;
+        margin-top: 30px;
+        span{
+            @include span();
         }
-        .ul{
-            display: none;
+    }
+    .picture{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5%;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .pic1{
+        text-align: center;
+    border: 1px solid $main-color;
+    width:385px ;
+    height:250px ;
+    border-radius: 10px;
+    padding: 0%;
+    margin: 2%;
+    overflow: hidden;
+    
+    }
+    img:hover{
+        opacity: 70%;
+    transform: scale(1.06);
+    transition: 1s;
+    cursor: pointer;
+    }
+    img{
+        width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    }
+
+    .slider{
+        
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        color: $main-color;
+        font-family: ghalam;
+        text-align: center;
+        font-size: 50px;
+        a{
+            color: #6B5041;
+        }
+        i{
+            font-size: 100px;
         }
     }
-    
-    
-    
-    // Media Queries>
+}
+
+//galery page1>
